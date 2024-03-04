@@ -1,0 +1,16 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    background-color: rgb(216, 135, 60);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+form {
+    background-color: rgb(224, 67, 67); 
+}
