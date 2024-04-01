@@ -4,13 +4,25 @@
     box-sizing: inherit;
 }
 
+
 body {
-    background-color: rgb(216, 135, 60);
     display: flex;
     flex-direction: column;
     align-items: center; 
 }
 
-form {
-    background-color: rgb(224, 67, 67); 
+
+.background-container {
+    background-image: url("./media/RPG_Character_Project.jpg");
+    background-size: cover;
+    height: 900px;
+    width: 100%;
+    color: white;
 }
+
+
+form {
+    background-color: rgb(12, 83, 24);
+}
+
+

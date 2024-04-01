@@ -1,67 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Description" content="Enter your description here"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<script src="bundle.js" defer></script>
-<link rel="stylesheet" href="./static/main.css">
-<title>RPG Character Builder</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="bundle.js" defer></script>
+    <link rel="stylesheet" href="./static/main.css">
+    <title>RPG Character Builder</title>
 </head>
+
 <body>
+    <div class="container-fluid">
+        <div class="row background-container justify-content-center">
+            <form id="characterForm" class="rounded shadow m-5 p-5 opacity-75" style="width: 800px;">
+                <h1 class="d-flex justify-content-center mb-4">RPG Character Builder</h1>
+                <label for="characterName" class="form-label">Character Name: </label><br>
+                <input type="text" class="form-control" id="characterName" name="characterName" required><br>
 
-    <form id="characterForm" class="rounded shadow m-5 p-5" style="width: 800px;">
-        <h1 class="d-flex justify-content-center mb-4">RPG Character Builder</h1>
-        <label for="characterName" class="form-label">Character Name: </label><br>
-        <input type="text" class="form-control" id="characterName" name="characterName" required><br>
-        
-        <label for="description" class="form-label" >Description:</label><br>
-        <textarea name="description" id="description" rows="4" class="form-control" required></textarea><br>
-        
-        <label for="race">Race:</label><br>
-        <select name="race" id="race" class="mb-3" required>
-            <option value="humans">Humans</option>
-            <option value="orcs">Orcs</option>
-            <option value="peons">Peons</option>
-            <option value="elves">Elves</option>
-        </select><br>
+                <label for="description" class="form-label">Description:</label><br>
+                <textarea name="description" id="description" rows="4" class="form-control" required></textarea><br>
 
-        <label for="warriorType">Warrior Type:</label><br>
-        <select name="warriorType" id="warriorType" class="mb-3" required>
-            <option value="knight">Knight</option>
-            <option value="archer">Archer</option>
-            <option value="wizard">Wizard</option>
-            <option value="warlock">Warlock</option>
-        </select><br>
+                <label for="race">Race:</label><br>
+                <select name="race" id="race" class="mb-3" required>
+                    <option value="Humans">Humans</option>
+                    <option value="Orcs">Orcs</option>
+                    <option value="Peons">Peons</option>
+                    <option value="Elves">Elves</option>
+                </select><br>
 
-        <label for="weapon">Weapon:</label><br>
-        <select name="weapon" id="weapon" class="mb-3" required>
-            <option value="sword">Sword</option>
-            <option value="battle axe">Battle Axe</option>
-            <option value="club">Club</option>
-            <option value="war hammer">War Hammer</option>
-            <option value="bow and arrow">Bow and Arrow</option>
-            <option value="crossbow">Crossbow</option>
-            <option value="valyrian steel sword">Valyrian Steel Sword</option>
-            <option value="staff">Staff</option>
-            <option value="wizard spells">Wizard Spells</option>
-            <option value="warlock magic">Warlock Magic</option>
-        </select><br>
-        
-        <button class="btn btn-primary" type="submit">Create Character!</button>
-        
-    </form>
-    
-    <!-- Area to display our Characters -->
-    <h1>Character List</h1>
-    <div id="characterList">
-        <ul id="characters"></ul>
+                <label for="warriorType">Warrior Type:</label><br>
+                <select name="warriorType" id="warriorType" class="mb-3" required>
+                    <option value="Knight">Knight</option>
+                    <option value="Archer">Archer</option>
+                    <option value="Wizard">Wizard</option>
+                    <option value="Warlock">Warlock</option>
+                </select><br>
+
+                <label for="weapon">Weapon:</label><br>
+                <select name="weapon" id="weapon" class="mb-3" required>
+                    <option value="Sword">Sword</option>
+                    <option value="Battle Axe">Battle Axe</option>
+                    <option value="Club">Club</option>
+                    <option value="War Hammer">War Hammer</option>
+                    <option value="Bow and Arrow">Bow and Arrow</option>
+                    <option value="Crossbow">Crossbow</option>
+                    <option value="Valyrian Steel Sword">Valyrian Steel Sword</option>
+                    <option value="Staff">Staff</option>
+                    <option value="Wizard Spells">Wizard Spells</option>
+                    <option value="Warlock Magic">Warlock Magic</option>
+                </select><br>
+
+                <button class="btn btn-danger mt-5" type="submit">Create Character!</button>
+
+            </form>
+        </div>
+
+        <!-- Area to display our Characters -->
+        <div class="row mt-5 mb-5 align-items-center">
+            <h1 class="d-flex mb-4 justify-content-center">Character List</h1>
+            <div class="d-flex justify-content-center" id="characterList">
+                <ul id="characters"></ul>
+            </div>
+        </div>
+
+
     </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
 </body>
+
 </html>
